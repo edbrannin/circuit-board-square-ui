@@ -1,0 +1,8 @@
+.constraint {
+  background-color: darkred;
+  padding: 2em;
+}
+
+.constraint.satisfied {
+  background-color: darkgreen;
+}

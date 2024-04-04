@@ -1,0 +1,9 @@
+input {
+  width: 2em;
+  text-align: center;
+  padding: 1em;
+}
+
+.duplicate {
+  background-color: darkred;
+}
