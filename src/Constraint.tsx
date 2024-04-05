@@ -51,7 +51,7 @@ const Constraint: FC<{
 
   const targetValue = constraints[index];
   const currentValue = getCurrentValue({ index, inputs });
-  const satisfied = currentValue === targetValue;
+  const satisfied = targetValue !== 0 && currentValue === targetValue;
   const difference = targetValue - currentValue;
 
   return (
