@@ -1,5 +1,17 @@
 .grid-item {
   /* padding: 1em; */
-  border: 1px dashed wheat;
+  /* border: 1px dashed wheat; */
   overflow: auto;
+}
+
+.grid > * {
+  order: 3;
+}
+
+.grid :nth-child(-n+4) {
+  order: 1;
+}
+
+.grid :last-child {
+  order: 2;
 }

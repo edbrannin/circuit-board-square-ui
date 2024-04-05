@@ -20,6 +20,17 @@ const findDuplicates = <T,>(items: T[], alwaysReturn?: T[]): Set<T> => {
   return duplicates;
 }
 
+const INPUT_TAB_ORDER = [
+  0, 1, 2, 3,
+  5, 6, 7, 8,
+  4
+];
+
+const CONSTRAINT_ORDER = [
+  0, 1, 2, 3,
+  4, 5, 6, 7,
+];
+
 const Board: FC<{
   constraints: number[];
 }> = ({
@@ -55,26 +66,23 @@ const Board: FC<{
   return (
     <div className={classNames("board", { [`focus-${String(inputFocus)}`]: inputFocus !== undefined })}>
       <Grid>
-        <GridItem><Constraint index={0} /></GridItem>
-        <GridItem><Constraint index={1} /></GridItem>
-        <GridItem><Constraint index={2} /></GridItem>
-        <GridItem><Constraint index={3} /></GridItem>
+        {CONSTRAINT_ORDER.map((index) => (
+          <GridItem><Constraint index={index} /></GridItem>
+        ))}
+
         <GridItem>
           <Grid>
-            {inputs.map((value, place) => (
+            {INPUT_TAB_ORDER.map((place) => (
               <GridItem key={place}>
                 <AnswerInput
                   index={place}
-                  duplicate={duplicateInputs.has(value)}
+                  duplicate={duplicateInputs.has(inputs[place])}
                 />
               </GridItem>
             ))}
           </Grid>
         </GridItem>
-        <GridItem><Constraint index={4} /></GridItem>
-        <GridItem><Constraint index={5} /></GridItem>
-        <GridItem><Constraint index={6} /></GridItem>
-        <GridItem><Constraint index={7} /></GridItem>
+
       </Grid>
     </div>
   )
