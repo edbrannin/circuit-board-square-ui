@@ -7,10 +7,19 @@ import { ConstraintsContext } from './useConstraints';
 import InputPalette from './InputPalette';
 import { InputFocus } from './useInputFocus';
 
+const INITIAL_CONSTRAINTS: Constraints = [0, 0, 0, 0, 0, 0, 0, 0];
+const INITIAL_INPUTS: Inputs = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
 function App() {
-  const [constraints, setConstraints] = useState<Constraints>([99, 99, 99, 99, 99, 99, 99, 99]);
-  const [inputs, setInputs] = useState<Inputs>([0, 0, 0, 0, 0, 0, 0, 0, 0])
+  const [constraints, setConstraints] = useState<Constraints>(INITIAL_CONSTRAINTS);
+  const [inputs, setInputs] = useState<Inputs>(INITIAL_INPUTS)
   const [inputFocus, setInputFocus] = useState<InputsIndex | undefined>(undefined);
+
+  const reset = () => {
+    setConstraints(INITIAL_CONSTRAINTS);
+    setInputs(INITIAL_INPUTS);
+    setInputFocus(undefined);
+  }
 
   return (
     <>
@@ -27,6 +36,7 @@ function App() {
           </InputFocus.Provider>
         </ConstraintsContext.Provider>
         <InputPalette />
+        <button onClick={reset}>Clear</button>
       </InputsContext.Provider>
     </>
   )
