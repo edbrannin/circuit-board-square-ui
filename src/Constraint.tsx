@@ -55,7 +55,7 @@ const Constraint: FC<{
   const difference = targetValue - currentValue;
 
   return (
-    <div className={classNames('constraint', { satisfied })}>
+    <div className={classNames('constraint', { satisfied }, ...MAPPINGS[index].map(input => `input-${String(input)}`))}>
       <div>
         <ConstraintInput index={index} /> 
       </div>

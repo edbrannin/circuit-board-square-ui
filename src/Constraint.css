@@ -6,3 +6,15 @@
 .constraint.satisfied {
   background-color: darkgreen;
 }
+
+.board.focus-0 .constraint.input-0,
+.board.focus-1 .constraint.input-1,
+.board.focus-2 .constraint.input-2,
+.board.focus-3 .constraint.input-3,
+.board.focus-4 .constraint.input-4,
+.board.focus-5 .constraint.input-5,
+.board.focus-6 .constraint.input-6,
+.board.focus-7 .constraint.input-7,
+.board.focus-8 .constraint.input-8 {
+  border: 4px solid white;
+}
