@@ -67,7 +67,7 @@ const Board: FC<{
     <div className={classNames("board", { [`focus-${String(inputFocus)}`]: inputFocus !== undefined })}>
       <Grid>
         {CONSTRAINT_ORDER.map((index) => (
-          <GridItem><Constraint index={index} /></GridItem>
+          <GridItem key={index}><Constraint index={index} /></GridItem>
         ))}
 
         <GridItem>

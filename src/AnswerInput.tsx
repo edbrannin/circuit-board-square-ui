@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import './AnswerInput.css';
 import useInputs from './useInputs';
-import { Inputs } from './types';
+import { Inputs, InputsIndex } from './types';
 import useInputFocus from './useInputFocus';
 
 const AnswerInput: React.FC<{
-  index: number;
+  index: InputsIndex;
   duplicate: boolean;
 }> = ({
   index,

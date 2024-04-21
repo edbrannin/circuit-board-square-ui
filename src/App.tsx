@@ -21,6 +21,28 @@ function App() {
     setInputFocus(undefined);
   }
 
+  const loadSample = () => {
+    reset();
+    setConstraints([
+      17, 12, 11,
+      13, 6,
+      12, 7, 6,
+    ]);
+  }
+
+  const setNumber = (value: number, index: InputsIndex) => {
+    console.log(`in setNumber(${value}, ${index})`)
+    if (index !== undefined) {
+      const newInputs = [
+        ...inputs.slice(0, index),
+        value,
+        ...inputs.slice(index + 1, inputs.length),
+      ] as Inputs;
+      newInputs[index] = value;
+      setInputs(newInputs);
+    }
+  }
+
   return (
     <>
       <h1>Circuit Board Square</h1>
@@ -33,10 +55,13 @@ function App() {
             <Board
               constraints={constraints}
             />
+            <InputPalette setNumber={setNumber} />
           </InputFocus.Provider>
         </ConstraintsContext.Provider>
-        <InputPalette />
-        <button onClick={reset}>Clear</button>
+        <div className="buttons">
+          <button onClick={reset}>Clear</button>
+          <button onClick={loadSample}>Load Sample</button>
+        </div>
       </InputsContext.Provider>
     </>
   )
