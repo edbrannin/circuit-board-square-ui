@@ -41,7 +41,7 @@ const AnswerInput: React.FC<{
         setInputFocus(index);
       }}
       onBlur={() => setInputFocus(undefined)}
-      className={classNames({ duplicate: duplicate || inputs[index] === 0 })}
+      className={classNames('answer', { duplicate: duplicate || inputs[index] === 0 })}
       onChange={e => setInput(Number(e.target.value))}
       value={inputs[index]}
     />

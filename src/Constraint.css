@@ -1,22 +1,22 @@
-.constraint {
+div.constraint {
   background-color: darkred;
   border: 4px solid darkred;
   padding: 2em;
 }
 
-.constraint.satisfied {
+div.constraint.satisfied {
   background-color: darkgreen;
   border: 4px solid darkgreen;
 }
 
-.board.focus-0 .constraint.input-0,
-.board.focus-1 .constraint.input-1,
-.board.focus-2 .constraint.input-2,
-.board.focus-3 .constraint.input-3,
-.board.focus-4 .constraint.input-4,
-.board.focus-5 .constraint.input-5,
-.board.focus-6 .constraint.input-6,
-.board.focus-7 .constraint.input-7,
-.board.focus-8 .constraint.input-8 {
+.board.focus-0 div.constraint.input-0,
+.board.focus-1 div.constraint.input-1,
+.board.focus-2 div.constraint.input-2,
+.board.focus-3 div.constraint.input-3,
+.board.focus-4 div.constraint.input-4,
+.board.focus-5 div.constraint.input-5,
+.board.focus-6 div.constraint.input-6,
+.board.focus-7 div.constraint.input-7,
+.board.focus-8 div.constraint.input-8 {
   border: 4px solid white;
 }

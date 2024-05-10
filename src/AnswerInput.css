@@ -1,9 +1,13 @@
-input {
-  width: 2em;
+input.answer {
+  width: 1em;
   text-align: center;
   padding: 1em;
 }
 
 .duplicate {
   background-color: darkred;
+}
+
+span.answer-input {
+  display: block;
 }

@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import useConstraints from './useConstraints';
 import { Constraints } from './types';
+import './ConstraintInput.css';
 
 const ConstraintInput: React.FC<{
   index: number;
@@ -27,7 +28,7 @@ const ConstraintInput: React.FC<{
   return (
     <input
       onFocus={(e) => e.target.select()}
-      className={classNames({ duplicate })}
+      className={classNames('constraint', { duplicate })}
       onChange={e => setConstraint(Number(e.target.value))}
       value={constraints[index]}
     />
